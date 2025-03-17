@@ -1,8 +1,9 @@
+import type { HTMLProps, ReactNode } from 'react';
 import styles from './input.module.css'
 
 
-interface InputProps extends React.HTMLProps<HTMLInputElement> {
-  icon?: React.ReactNode;
+interface InputProps extends HTMLProps<HTMLInputElement> {
+  icon?: ReactNode;
 }
 
 export function Input(props: InputProps) {

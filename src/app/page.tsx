@@ -1,17 +1,15 @@
 import styles from "./page.module.css";
 
-import { Input } from "@/app/components/input/input";
+import { PageHeader } from "@/app/components/PageHeader";
+import { TasksActionBar } from "@/app/components/TasksActionBar";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <div>Kaam Dhaam</div>
-        <Input placeholder="Search" />
-      </header>
-      <div className="font-bold">
-          Tasks
-      </div>
+      <PageHeader />
+      <section className={styles.tasksListSection}>
+        <TasksActionBar />
+      </section>
     </main>
   );
 }

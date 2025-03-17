@@ -1,0 +1,18 @@
+.kdButton {
+    padding: 12px 16px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+
+.kdButtonFilled {
+    background: #941B0F;
+    color: #ffffff;
+}
+
+.kdButtonOutlined {
+    border: 2px solid #941B0F;
+    border-radius: 4px;
+    background: none;
+    color: #941B0F;
+}
