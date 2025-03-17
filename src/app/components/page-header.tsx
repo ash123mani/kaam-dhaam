@@ -1,6 +1,6 @@
 import { Input } from "@/shared/input";
 
-import styles from "./PageHeader.module.css";
+import styles from "./page-header.module.css";
 
 
 export function PageHeader() {

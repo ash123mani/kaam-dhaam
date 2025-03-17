@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 
-import { PageHeader } from "@/app/components/PageHeader";
-import { TasksActionBar } from "@/app/components/TasksActionBar";
+import { PageHeader } from "@/app/components/page-header";
+import { TasksActionBar } from "@/app/components/tasks-action-bar";
 
 export default function Home() {
   return (

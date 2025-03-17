@@ -1,6 +1,6 @@
 import { Button } from "@/shared/button";
 
-import styles from "./TasksActionBar.module.css";
+import styles from "./tasks-action-bar.module.css";
 
 export function TasksActionBar() {
   return(
