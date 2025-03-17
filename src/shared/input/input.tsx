@@ -6,8 +6,8 @@ interface InputProps extends HTMLProps<HTMLInputElement> {
   icon?: ReactNode;
 }
 
-export function Input(props: InputProps) {
+export function Input({ width, ...restProps }: InputProps) {
   return (
-    <input {...props} className={styles.kdInput} />
+    <input className={`${styles.kdInput} font-regular`}  style={{ width }} {...restProps} />
   )
 }
