@@ -1,35 +1,41 @@
+import type { ReactNode } from "react";
+
 import styles from './tasks-list-table.module.css';
 
-export function TasksListTable() {
+
+interface Column<SourceDataType> {
+  key: string;
+  title: string;
+  render?: (rowData: SourceDataType) => ReactNode;
+  dataIndex: string;
+}
+
+interface TableProps<SourceDataType> {
+  columns: Column<SourceDataType>[],
+  dataSource: SourceDataType[],
+}
+
+export function TasksListTable<SourceDataType extends  { [key: string]: string }>({ columns, dataSource }: TableProps<SourceDataType>) {
   return (
     <table className={styles.tasksListTable}>
       <thead>
         <tr>
-          <th className="font-regular">Name</th>
-          <th className="font-regular">Priority</th>
+          {columns.map((headerItem, index) =>
+            <th key={index} className="font-regular">{headerItem.title}</th>
+          )}
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td className="font-medium">Fake Task</td>
-          <td className="font-medium">Medium</td>
-        </tr>
-        <tr>
-          <td className="font-medium">Fake Task 2</td>
-          <td className="font-medium">Medium 2</td>
-        </tr>
-        <tr>
-          <td className="font-medium">Fake Task 3</td>
-          <td className="font-medium">Medium 3</td>
-        </tr>
-        <tr>
-          <td className="font-medium">Fake Task 3</td>
-          <td className="font-medium">Medium 3</td>
-        </tr>
-        <tr>
-          <td className="font-medium">Fake Task 3</td>
-          <td className="font-medium">Medium 3</td>
-        </tr>
+        {dataSource.map((data, index) => (
+          <tr key={index}>
+            {columns.map((column, index) =>
+              <td key={index} className="font-medium">
+                {column.render ?column.render(data) : data?.[column.dataIndex]}
+              </td>
+            )}
+          </tr>
+        )
+        )}
       </tbody>
     </table>
   )
