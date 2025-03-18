@@ -1,8 +1,10 @@
+"use client";
 import React, { ReactNode, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 
 import { ModalHeader } from './modal-header'
 import { ModalContent } from './modal-content'
+import { ModalFooter } from './modal-footer'
 
 import styles from './modal.module.css'
 
@@ -24,6 +26,7 @@ const Modal = ({ children, onEscKeyPress }:ModalProps) => {
 
   return createPortal(
     <div className={styles.modal}>
+      <div className={styles.modalBackdrop}></div>
       <div className={styles.modalWrapper}>
         {children}
       </div>
@@ -36,4 +39,5 @@ export {
   Modal,
   ModalHeader,
   ModalContent,
+  ModalFooter
 }

@@ -23,6 +23,7 @@ export default function Home() {
             <Modal onEscKeyPress={() => setShowModal(false)}>
               <Modal.Header>I am header</Modal.Header>
               <Modal.Content>Content</Modal.Content>
+              <Modal.Footer>Footer</Modal.Footer>
             </Modal>
         }
 

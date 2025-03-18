@@ -9,11 +9,20 @@
     z-index: 2;
 }
 
+.modalBackdrop {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+
 .modalWrapper {
     padding: 24px 24px;
     width: 480px;
     background: red;
     border-radius: 4px;
     animation: expand 0.2s linear;
-    box-shadow: 0 0 0 50vmax #000000;
+    /*box-shadow: 0 0 0 50vmax #000000;*/
 }
