@@ -5,30 +5,30 @@ export function TasksListTable() {
     <table className={styles.tasksListTable}>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Priority</th>
+          <th className="font-regular">Name</th>
+          <th className="font-regular">Priority</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Fake Task</td>
-          <td>Medium</td>
+          <td className="font-medium">Fake Task</td>
+          <td className="font-medium">Medium</td>
         </tr>
         <tr>
-          <td>Fake Task 2</td>
-          <td>Medium 2</td>
+          <td className="font-medium">Fake Task 2</td>
+          <td className="font-medium">Medium 2</td>
         </tr>
         <tr>
-          <td>Fake Task 3</td>
-          <td>Medium 3</td>
+          <td className="font-medium">Fake Task 3</td>
+          <td className="font-medium">Medium 3</td>
         </tr>
         <tr>
-          <td>Fake Task 3</td>
-          <td>Medium 3</td>
+          <td className="font-medium">Fake Task 3</td>
+          <td className="font-medium">Medium 3</td>
         </tr>
         <tr>
-          <td>Fake Task 3</td>
-          <td>Medium 3</td>
+          <td className="font-medium">Fake Task 3</td>
+          <td className="font-medium">Medium 3</td>
         </tr>
       </tbody>
     </table>

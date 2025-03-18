@@ -10,7 +10,9 @@ export default function Home() {
       <PageHeader />
       <section className={styles.tasksListSection}>
         <TasksActionBar />
-        <TasksListTable />
+        <div className={styles.tasksListTableContainer}>
+          <TasksListTable />
+        </div>
       </section>
     </main>
   );

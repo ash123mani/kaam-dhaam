@@ -3,7 +3,6 @@
     border-spacing: 0;
     border-collapse: separate;
 
-    background: #FFF9F8;
     border: 1px solid #941B0F;
     border-radius: 10px 10px 10px 10px;
 }
@@ -14,13 +13,17 @@
 
 .tasksListTable th {
     text-align: left;
+    background: #FFF9F8;
+    color: #941B0F;
 }
 
 .tasksListTable th, .tasksListTable td {
-    padding: 4px;
+    padding: 16px 0 16px 24px;
 }
 
-
+.tasksListTable tr:nth-child(odd) {
+    background: #ffffff;
+}
 
 .tasksListTable tr:nth-child(even) {
     background: #FFF9F8;

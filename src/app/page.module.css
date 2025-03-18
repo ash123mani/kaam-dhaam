@@ -11,6 +11,10 @@
   flex: 1;
 }
 
+.tasksListTableContainer {
+  margin-top: 32px;
+}
+
 
 @media (max-width: 600px) {
   .page {
