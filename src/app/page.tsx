@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 
 import { PageHeader } from "@/app/components/page-header";
 import { TasksActionBar } from "@/app/components/tasks-action-bar";
-import { Table } from "@/shared/table/table";
+import { Table, TableProps } from "@/shared/table/table";
 
 
 export default function Home() {
@@ -19,7 +19,14 @@ export default function Home() {
   );
 }
 
-const dataSource = [
+interface DataType {
+  key: string;
+  name: string;
+  age: number;
+  address: string;
+}
+
+const dataSource: DataType[] = [
   {
     key: '1',
     name: 'Mike',
@@ -34,7 +41,7 @@ const dataSource = [
   },
 ];
 
-const columns = [
+const columns: TableProps<DataType>['columns'] = [
   {
     title: 'Name',
     dataIndex: 'name',
@@ -49,5 +56,8 @@ const columns = [
     title: 'Address',
     dataIndex: 'address',
     key: 'address',
+    render: (rowData: DataType) => {
+      return <p className="font-bold">{rowData.address}</p>
+    }
   },
 ];

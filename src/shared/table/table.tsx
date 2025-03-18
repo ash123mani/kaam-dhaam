@@ -1,19 +1,21 @@
 import { ReactNode } from "react";
 import styles from './table.module.css';
+import { AnyObject } from "@/utils/types";
 
-interface Column<SourceDataType> {
+export interface Column<SourceDataType> {
     key: string;
     title: string;
     render?: (rowData: SourceDataType) => ReactNode;
     dataIndex: string;
 }
 
-interface TableProps<SourceDataType> {
+export interface TableProps<SourceDataType> {
     columns: Column<SourceDataType>[],
     dataSource: SourceDataType[],
 }
 
-export function Table<SourceDataType extends  { [key: string]: string | number | null}>({ columns, dataSource }: TableProps<SourceDataType>) {
+
+export function Table<SourceDataType extends  AnyObject>({ columns, dataSource }: TableProps<SourceDataType>) {
   return (
     <table className={styles.table}>
       <thead>
