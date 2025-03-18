@@ -1,23 +1,21 @@
-import type { ReactNode } from "react";
-
-import styles from './tasks-list-table.module.css';
-
+import { ReactNode } from "react";
+import styles from './table.module.css';
 
 interface Column<SourceDataType> {
-  key: string;
-  title: string;
-  render?: (rowData: SourceDataType) => ReactNode;
-  dataIndex: string;
+    key: string;
+    title: string;
+    render?: (rowData: SourceDataType) => ReactNode;
+    dataIndex: string;
 }
 
 interface TableProps<SourceDataType> {
-  columns: Column<SourceDataType>[],
-  dataSource: SourceDataType[],
+    columns: Column<SourceDataType>[],
+    dataSource: SourceDataType[],
 }
 
-export function TasksListTable<SourceDataType extends  { [key: string]: string }>({ columns, dataSource }: TableProps<SourceDataType>) {
+export function Table<SourceDataType extends  { [key: string]: string | number | null}>({ columns, dataSource }: TableProps<SourceDataType>) {
   return (
-    <table className={styles.tasksListTable}>
+    <table className={styles.table}>
       <thead>
         <tr>
           {columns.map((headerItem, index) =>
@@ -30,7 +28,7 @@ export function TasksListTable<SourceDataType extends  { [key: string]: string }
           <tr key={index}>
             {columns.map((column, index) =>
               <td key={index} className="font-medium">
-                {column.render ?column.render(data) : data?.[column.dataIndex]}
+                {column.render ? column.render(data) :  data[column.dataIndex]}
               </td>
             )}
           </tr>

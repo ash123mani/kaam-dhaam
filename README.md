@@ -16,4 +16,5 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# kaam-dhaam
+# kaam-dhaam TODO
+Define the global css theme and use it.

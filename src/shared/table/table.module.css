@@ -1,4 +1,4 @@
-.tasksListTable {
+.table {
     width: 100%;
     border-spacing: 0;
     border-collapse: separate;
@@ -7,24 +7,24 @@
     border-radius: 10px 10px 10px 10px;
 }
 
-.tasksListTable tr:first-child th {
+.table tr:first-child th {
     border-bottom: 1px solid #941B0F;
 }
 
-.tasksListTable th {
+.table th {
     text-align: left;
     background: #FFF9F8;
     color: #941B0F;
 }
 
-.tasksListTable th, .tasksListTable td {
+.table th, .table td {
     padding: 16px 0 16px 24px;
 }
 
-.tasksListTable tr:nth-child(odd) {
+.table tr:nth-child(odd) {
     background: #ffffff;
 }
 
-.tasksListTable tr:nth-child(even) {
+.table tr:nth-child(even) {
     background: #FFF9F8;
 }
