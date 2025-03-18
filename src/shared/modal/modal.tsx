@@ -13,7 +13,7 @@ interface ModalProps {
   onEscKeyPress?: () => void;
 }
 
-const Modal = ({ children, onEscKeyPress }:ModalProps) => {
+const InternalModal = ({ children, onEscKeyPress }:ModalProps) => {
   const handleEscKeydown = (e: KeyboardEvent) => {
     if (e.key === "Escape") onEscKeyPress?.()
   }
@@ -35,9 +35,13 @@ const Modal = ({ children, onEscKeyPress }:ModalProps) => {
   )
 }
 
-export {
-  Modal,
-  ModalHeader,
-  ModalContent,
-  ModalFooter
-}
+type CompoundedModal = typeof InternalModal & {
+  Content: typeof ModalContent;
+  Header: typeof ModalHeader;
+  Footer: typeof ModalFooter;
+};
+
+export const Modal = InternalModal as CompoundedModal;
+Modal.Content = ModalContent;
+Modal.Header = ModalHeader;
+Modal.Footer = ModalFooter;
