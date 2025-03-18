@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 
 import { PageHeader } from "@/app/components/page-header";
 import { TasksActionBar } from "@/app/components/tasks-action-bar";
+import { TasksListTable } from "@/app/components/tasks-list-table";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <PageHeader />
       <section className={styles.tasksListSection}>
         <TasksActionBar />
+        <TasksListTable />
       </section>
     </main>
   );

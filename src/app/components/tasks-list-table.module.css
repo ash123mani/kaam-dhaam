@@ -1,0 +1,27 @@
+.tasksListTable {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+
+    background: #FFF9F8;
+    border: 1px solid #941B0F;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.tasksListTable tr:first-child th {
+    border-bottom: 1px solid #941B0F;
+}
+
+.tasksListTable th {
+    text-align: left;
+}
+
+.tasksListTable th, .tasksListTable td {
+    padding: 4px;
+}
+
+
+
+.tasksListTable tr:nth-child(even) {
+    background: #FFF9F8;
+}
