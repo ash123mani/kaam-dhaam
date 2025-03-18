@@ -6,29 +6,20 @@ import { ModalContent } from './modal-content'
 
 import styles from './modal.module.css'
 
-
 interface ModalProps {
   children: ReactNode;
-  onEscKeydown?: () => void;
+  onEscKeyPress?: () => void;
 }
 
-const Modal = ({ children, onEscKeydown }:ModalProps) => {
+const Modal = ({ children, onEscKeyPress }:ModalProps) => {
   const handleEscKeydown = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && onEscKeydown) {
-      onEscKeydown()
-    }
+    if (e.key === "Escape") onEscKeyPress?.()
   }
 
   useEffect(() => {
-    if (onEscKeydown) {
-      document.addEventListener(
-        'keydown', handleEscKeydown, false,
-      )
-    }
+    document.addEventListener('keydown', handleEscKeydown, false);
 
-    return () => document.removeEventListener(
-      'keydown', handleEscKeydown, false,
-    )
+    return () => document.removeEventListener('keydown', handleEscKeydown, false)
   }, [])
 
   return createPortal(
