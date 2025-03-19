@@ -20,7 +20,7 @@ export default function Home() {
           <Table columns={columns} dataSource={dataSource}/>
         </div>
         {showModal &&
-            <Modal onEscKeyPress={() => setShowModal(false)}>
+            <Modal onClose={() => setShowModal(false)}>
               <Modal.Header>I am header</Modal.Header>
               <Modal.Content>Content</Modal.Content>
               <Modal.Footer>Footer</Modal.Footer>

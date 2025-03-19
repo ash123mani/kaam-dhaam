@@ -7,7 +7,7 @@ interface ModalHeaderProps {
 }
 
 export const ModalHeader = ({ children }:ModalHeaderProps) => (
-  <div className={styles.modalHeader}>
+  <div className={`${styles.modalHeader} font-semibold`}>
     {children}
   </div>
 )

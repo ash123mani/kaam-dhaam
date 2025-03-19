@@ -7,6 +7,7 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
+    color: black;;
 }
 
 .modalBackdrop {
@@ -18,10 +19,18 @@
     z-index: -1;
 }
 
+.modalCloseIcon {
+    position: absolute;
+    top: 24px;
+    right: 12px;
+    cursor: pointer;
+}
+
 .modalWrapper {
+    position: relative;
     padding: 24px 24px;
     width: 480px;
-    background: red;
+    background: #ffffff;
     border-radius: 4px;
     animation: expand 0.2s linear;
     /*box-shadow: 0 0 0 50vmax #000000;*/
