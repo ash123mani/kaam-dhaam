@@ -15,6 +15,12 @@
   margin-top: 32px;
 }
 
+.tasksListContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 
 @media (max-width: 600px) {
   .page {

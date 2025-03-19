@@ -1,11 +1,22 @@
+.kdInputWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .kdInput {
     padding: 8px 0 8px 12px;
     height: 40px;
     border: 1px solid #9B9B9B;
     border-radius: 5px;
     color: #9B9B9B;
+    width: 100%;
+}
+
+.kdInputLabel {
+    margin-bottom: 8px;
 }
 
 .kdInput:focus {
     outline: none;
+    width: inherit;
 }

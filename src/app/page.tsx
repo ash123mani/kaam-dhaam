@@ -6,6 +6,7 @@ import { TasksActionBar } from "@/app/components/tasks-action-bar";
 import { Table, TableProps } from "@/shared/table/table";
 import { Modal } from "@/shared/modal";
 import { useState } from "react";
+import { Input } from "@/shared/input";
 
 
 export default function Home() {
@@ -21,8 +22,14 @@ export default function Home() {
         </div>
         {showModal &&
             <Modal onClose={() => setShowModal(false)}>
-              <Modal.Header>I am header</Modal.Header>
-              <Modal.Content>Content</Modal.Content>
+              <Modal.Header>Add Task</Modal.Header>
+              <Modal.Content>
+                <div className={styles.tasksListContent}>
+                  <Input label="Name" name="name" />
+                  <Input label="Description" name="description" />
+                  <Input label="Choose Due Date" name="dueDate" />
+                </div>
+              </Modal.Content>
               <Modal.Footer>Footer</Modal.Footer>
             </Modal>
         }
