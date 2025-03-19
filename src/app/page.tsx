@@ -4,13 +4,10 @@ import styles from "./page.module.css";
 import { PageHeader } from "@/app/components/page-header";
 import { TasksActionBar } from "@/app/components/tasks-action-bar";
 import { Table, TableProps } from "@/shared/table/table";
-import { Modal } from "@/shared/modal";
-import { useState } from "react";
-import { Input } from "@/shared/input";
+import { AddTaskFormModal } from "@/app/components/add-task-form-modal";
 
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(true);
 
   return (
     <main className={styles.main}>
@@ -20,20 +17,7 @@ export default function Home() {
         <div className={styles.tasksListTableContainer}>
           <Table columns={columns} dataSource={dataSource}/>
         </div>
-        {showModal &&
-            <Modal onClose={() => setShowModal(false)}>
-              <Modal.Header>Add Task</Modal.Header>
-              <Modal.Content>
-                <div className={styles.tasksListContent}>
-                  <Input label="Name" name="name" />
-                  <Input label="Description" name="description" />
-                  <Input label="Choose Due Date" name="dueDate" />
-                </div>
-              </Modal.Content>
-              <Modal.Footer>Footer</Modal.Footer>
-            </Modal>
-        }
-
+        <AddTaskFormModal />
       </section>
     </main>
   );

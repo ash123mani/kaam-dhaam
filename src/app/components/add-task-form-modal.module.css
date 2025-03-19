@@ -1,0 +1,11 @@
+.addTaskFormContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.addTaskFormFooter {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
