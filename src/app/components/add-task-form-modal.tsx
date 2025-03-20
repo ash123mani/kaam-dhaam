@@ -16,14 +16,14 @@ export function AddTaskFormModal() {
       <Modal.Content>
         <div className={styles.addTaskFormContent}>
           <Input label="Name" name="name" />
-          <Input label="Description" name="description" />
-          <Input label="Choose Due Date" name="dueDate" />
+          <Input label="Description" name="description" cols={5}  />
+          <Input type="date" label="Choose Due Date" name="dueDate" />
         </div>
       </Modal.Content>
       <Modal.Footer>
         <div className={styles.addTaskFormFooter}>
           <Button onClick={() => {setShowModal(false)}} style={{ flex: 1 }} variant="outline">Cancel</Button>
-          <Button onClick={() => {setShowModal(false)}} style={{ flex: 1 }}>Cancel</Button>
+          <Button onClick={() => {setShowModal(false)}} style={{ flex: 1 }}>Add Task</Button>
         </div>
       </Modal.Footer>
     </Modal>

@@ -7,7 +7,7 @@ export function PageHeader() {
   return (
     <header className={styles.header}>
       <div>Kaam Dhaam</div>
-      <Input placeholder="Search" width={330} type="text" />
+      <Input placeholder="Search" width={330} type="text" name="search" />
     </header>
   )
 }

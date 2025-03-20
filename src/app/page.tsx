@@ -61,7 +61,7 @@ const columns: TableProps<DataType>['columns'] = [
     dataIndex: 'address',
     key: 'address',
     render: (rowData: DataType) => {
-      return <p className="font-bold">{rowData.address}</p>
+      return <p>{rowData.address}</p>
     }
   },
 ];
