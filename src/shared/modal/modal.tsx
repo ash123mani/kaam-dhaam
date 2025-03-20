@@ -31,8 +31,8 @@ const InternalModal = ({ children, onClose }:ModalProps) => {
       <div className={styles.modalBackdrop}></div>
 
       <div className={styles.modalWrapper}>
-        <div className={styles.modalCloseIcon} role="button" onClick={onClose}>
-          <Image src={closeIcon} alt="Close"/>
+        <div onClick={onClose} className={styles.modalCloseIcon} role="button">
+          <Image src={closeIcon} alt="Close" />
         </div>
         {children}
       </div>

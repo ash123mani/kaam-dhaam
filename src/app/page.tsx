@@ -1,23 +1,36 @@
 "use client"
-import styles from "./page.module.css";
 
 import { PageHeader } from "@/app/components/page-header";
 import { TasksActionBar } from "@/app/components/tasks-action-bar";
 import { Table, TableProps } from "@/shared/table/table";
 import { AddTaskFormModal } from "@/app/components/add-task-form-modal";
+import { useState } from "react";
 
+import styles from "./page.module.css";
+
+export type TasksBarActionType = 'add' | 'sort' | 'filter'
 
 export default function Home() {
+  const [currentAction, setCurrentAction] = useState<TasksBarActionType | null>(null);
+
+  function handleTaskBarActionClick(actionType: TasksBarActionType) {
+    setCurrentAction(actionType)
+  }
 
   return (
     <main className={styles.main}>
       <PageHeader />
       <section className={styles.tasksListSection}>
-        <TasksActionBar />
+        <TasksActionBar onTaskBarActionClick={handleTaskBarActionClick}/>
         <div className={styles.tasksListTableContainer}>
           <Table columns={columns} dataSource={dataSource}/>
         </div>
-        <AddTaskFormModal />
+        {currentAction === 'add' &&
+            <AddTaskFormModal
+              open={currentAction == 'add'}
+              onAddTaskSubmit={() => {}}
+              onClose={() => setCurrentAction(null)}
+            />}
       </section>
     </main>
   );

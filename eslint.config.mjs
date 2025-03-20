@@ -15,6 +15,7 @@ const eslintConfig = [
     rules: {
       indent: ["error", 2], // Enforces 2 spaces indentation
       "object-curly-spacing": ["error", "always"], // Enforce space inside braces
+      "max-len": ["error", { "code": 120 }]
     },
   },
 ];

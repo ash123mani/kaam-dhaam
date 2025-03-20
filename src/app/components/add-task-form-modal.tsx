@@ -1,17 +1,20 @@
 import { Modal } from "@/shared/modal";
 import { Input } from "@/shared/input";
 import { Button } from "@/shared/button";
-import { useState } from "react";
 
 import styles from './add-task-form-modal.module.css'
 
-export function AddTaskFormModal() {
-  const [showModal, setShowModal] = useState(true);
+interface AddTaskFormModalProps {
+    open: boolean;
+    onClose: () => void;
+    onAddTaskSubmit: () => void;
+}
 
-  if (!showModal) return null;
+export function AddTaskFormModal({ open, onClose, onAddTaskSubmit }: AddTaskFormModalProps) {
+  if (!open) return null;
 
   return (
-    <Modal onClose={() => setShowModal(false)}>
+    <Modal onClose={onClose}>
       <Modal.Header>Add Task</Modal.Header>
       <Modal.Content>
         <div className={styles.addTaskFormContent}>
@@ -22,8 +25,8 @@ export function AddTaskFormModal() {
       </Modal.Content>
       <Modal.Footer>
         <div className={styles.addTaskFormFooter}>
-          <Button onClick={() => {setShowModal(false)}} style={{ flex: 1 }} variant="outline">Cancel</Button>
-          <Button onClick={() => {setShowModal(false)}} style={{ flex: 1 }}>Add Task</Button>
+          <Button onClick={onClose} style={{ flex: 1 }} variant="outline">Cancel</Button>
+          <Button onClick={onAddTaskSubmit} style={{ flex: 1 }}>Add Task</Button>
         </div>
       </Modal.Footer>
     </Modal>
